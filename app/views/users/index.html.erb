@@ -1,0 +1,14 @@
+
+<% for user in @users %>
+  <div class="product">
+    <h2><%= link_to user.name, user %></h2>
+    <div class="details">
+      <%= link_to user.email, user %> |
+      <%= link_to user.phone, user %> |
+      <%= link_to "Edit", edit_user_path(user) %> |
+      <%= link_to "Destroy", user, :method => :delete %>
+    </div>
+  </div>
+<% end %>
+
+<p><%= link_to "New User", new_user_path %></p>
